@@ -1,5 +1,5 @@
 
-setwd("C:/github/diets/scripts")
+setwd("scripts")
 
 dir.create("pkg", FALSE)
 dir.create("process", FALSE)

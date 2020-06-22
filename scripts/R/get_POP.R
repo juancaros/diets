@@ -63,9 +63,9 @@ url <- "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/C
 	pop <- rbind(pop, x)
 
 	saveRDS(pop, basename(f))
-	rwa <- pop[pop$ISO3 == "RWA" & pop$Year == 2017, ]
+	#rwa <- pop[pop$ISO3 == "RWA" & pop$Year == 2017, ]
 	
-	saveRDS(rwa, "pkg/rwa_pop.rds")
+	saveRDS(pop, "pop.rds")
 }
 
 

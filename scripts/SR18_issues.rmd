@@ -19,12 +19,12 @@ names(FCTP) <- c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNut
 FCTS  <- FCTS[,c("WA_NDB_No", "WA_Shrt_Desc", "Tagname", "NutrDesc", "Units", "Nutr_Val")]
 names(FCTS) <-c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")
 FCT_data  <- rbind(FCTP, FCTS)
-FCT  <- merge(d, FCT_data, all.x = TRUE, by=c("Code_FdGp3", "Item_FdGp3"))
-FCT  <- FCT[,c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")]
+FCT  <- merge(d, FCT_data, all.x = TRUE, by=c("Code_FdGp3"))
+#FCT  <- FCT[,c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")]
 FCT <- FCT[!is.na(FCT$PCT2_3 ), ]	
 i <- is.na(FCT$MNutrDesc) & is.na(FCT$Tagname)
 bad <- FCT[i, ]
-u = unique(bad[,c(8:9)])
+u = unique(bad[,c(1:9)])
 nomatch <- sort(u[,2])
 ```
 
