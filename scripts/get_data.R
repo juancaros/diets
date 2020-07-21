@@ -3,7 +3,7 @@ this <- system('hostname', TRUE)
 if (this == "LAPTOP-IVSPBGCA") {
 	setwd("C:/github/diets/scripts")
 } else {
-	setwd("C:/Users/jccaro/diets/")
+	setwd("C:/Users/jccaro/diets/scripts")
 }
 
 

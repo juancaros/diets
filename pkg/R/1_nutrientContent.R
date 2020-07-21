@@ -124,7 +124,7 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0) {
 }
 
 
-## The forst table should have a "coverage" variable so that 
+## The fort table should have a "coverage" variable so that 
 ## we do not assume 100%
 
 fortify <-  function(content, fort) {
