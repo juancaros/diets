@@ -14,8 +14,8 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0) {
 
 	continent <- trimws(continent)
 	stopifnot(continent %in% c("Africa", "Americas", "Asia", "Europe", "Oceania", ""))
-	stopifnot(redpalmoil <= 1)
-	stopifnot(orangesweetpot <= 1)
+	stopifnot(redpalmoil >= 0 & redpalmoil <= 1)
+	stopifnot(orangesweetpot >= 0 & orangesweetpot <= 1)
 
 	FCT  <- readRDS(file.path(.dataPath(), "FCT.rds"))
 
@@ -95,6 +95,7 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0) {
 	#notf  <- aggregate(notf[, c("MNutr_Val"), drop = FALSE], notf[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
 
 	# better
+	notf$MNutr_Val  <- notf$MNutr_Val * notf$PCT1_2
 	notf  <- aggregate(notf[, c("MNutr_Val", "PCT1_2"), drop = FALSE], notf[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
 	notf$MNutr_Val <- notf$MNutr_Val / notf$PCT1_2
 	notf$PCT1_2 <- NULL
