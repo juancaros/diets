@@ -61,7 +61,7 @@ old <- old[, c("ISO3", "Year", "Fortification", "Tagname", "Units", "Intake")]
 
 
 ### pick your country from "countries"
-i <- 1
+i <- 50
 x <- country_intake(countries[i,1], countries[i,2], fortify=T, adjust=T)
 
 m <- merge(old, x, by.x=c("ISO3", "Year", "Tagname"), by.y=c("country", "year", "tag"))
